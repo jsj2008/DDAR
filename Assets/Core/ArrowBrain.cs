@@ -5,7 +5,7 @@ public class ArrowBrain : MonoBehaviour {
 
 	Vector3 myVelocity=Vector3.zero;
 	float mult = 0.025f;
-	
+	float timeElapsedAfterCollide=10f;
 	
 	public void SetVelocity(Vector3 v){
 		myVelocity = v;
@@ -16,7 +16,14 @@ public class ArrowBrain : MonoBehaviour {
 			return;
 		else 
 			MoveThere(myVelocity);
-		timeElapsed+=Time.deltaTime;
+		timeElapsedAfterCollide+=Time.deltaTime;
+		if(timeElapsedAfterCollide<9&&timeElapsedAfterCollide>1.37f)
+			DeactivateSelf();
+	}
+	
+	void DeactivateSelf(){
+		// gesturehit flag off
+		Destroy (gameObject);	
 	}
 	
 	void MoveThere(Vector3 v){
@@ -30,8 +37,8 @@ public class ArrowBrain : MonoBehaviour {
 	}
 	
 	void InputTimer(string name){
-		// wait for hit and do something
-		
+		// gesturehitflag
+		timeElapsedAfterCollide = 0f;
 	}
 	
 }
