@@ -20,4 +20,8 @@ public class BodyBlurb : MonoBehaviour, IBGBodyReadingListener{
 			//transform.localScale = startScale * reading.GetScale() * 2.0f;	
 		}
 	}
+	
+	void OnTriggerEnter(Collider col){
+		ScoreKeeper.CheckHitTag(col.name);
+	}
 }

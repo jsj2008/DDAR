@@ -7,6 +7,8 @@ public class ArrowBrain : MonoBehaviour {
 	float mult = 0.025f;
 	float timeElapsedAfterCollide=10f;
 	
+	int whichHitTag=-1; 
+	
 	public void SetVelocity(Vector3 v){
 		myVelocity = v;
 	}
@@ -23,6 +25,12 @@ public class ArrowBrain : MonoBehaviour {
 	
 	void DeactivateSelf(){
 		// gesturehit flag off
+		if(whichHitTag==1)
+			ScoreKeeper.SetHitTag1 (ScoreKeeper.TheHitTags.None);
+		else if(whichHitTag==2)
+			ScoreKeeper.SetHitTag2 (ScoreKeeper.TheHitTags.None);
+		whichHitTag=-1;
+		
 		Destroy (gameObject);	
 	}
 	
@@ -38,6 +46,15 @@ public class ArrowBrain : MonoBehaviour {
 	
 	void InputTimer(string name){
 		// gesturehitflag
+		if(name=="Right"||name=="Bottom"||name=="Front"){
+			ScoreKeeper.SetHitTagString (2,name);
+			whichHitTag=2;
+		}else{
+			ScoreKeeper.SetHitTagString(1,name);
+			whichHitTag=1;
+		}
+		
+		// set timer to critical point period 
 		timeElapsedAfterCollide = 0f;
 	}
 	
