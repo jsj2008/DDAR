@@ -8,6 +8,7 @@ public class ArrowBrain : MonoBehaviour {
 	float timeElapsedAfterCollide=10f;
 	
 	int whichHitTag=-1; 
+	string hitWall="None";
 	
 	public void SetVelocity(Vector3 v){
 		myVelocity = v;
@@ -19,17 +20,15 @@ public class ArrowBrain : MonoBehaviour {
 		else 
 			MoveThere(myVelocity);
 		timeElapsedAfterCollide+=Time.deltaTime;
-		if(timeElapsedAfterCollide<9&&timeElapsedAfterCollide>1.37f)
+		if(timeElapsedAfterCollide<9&&timeElapsedAfterCollide>0.42f)
 			DeactivateSelf();
 	}
 	
 	void DeactivateSelf(){
 		// gesturehit flag off
-		if(whichHitTag==1)
-			ScoreKeeper.SetHitTag1 (ScoreKeeper.TheHitTags.None);
-		else if(whichHitTag==2)
-			ScoreKeeper.SetHitTag2 (ScoreKeeper.TheHitTags.None);
+		ScoreKeeper.SetOff (whichHitTag,hitWall);
 		whichHitTag=-1;
+		hitWall="None";
 		
 		Destroy (gameObject);	
 	}
@@ -39,12 +38,15 @@ public class ArrowBrain : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter(Collider col){
-		if(col.name!="Destroyer")
-			InputTimer(col.name);
+		if(col.name!="Destroyer"){
+			if(col.name!="Arrow"&&col.name!="BodyBouncer")
+				InputTimer(col.name);
+		}
 		else Destroy (gameObject);
 	}
 	
 	void InputTimer(string name){
+		hitWall = name;
 		// gesturehitflag
 		if(name=="Right"||name=="Bottom"||name=="Front"){
 			ScoreKeeper.SetHitTagString (2,name);

@@ -22,6 +22,11 @@ public class ScoreKeeper : MonoBehaviour {
 	static TheHitTags hitTag1 = TheHitTags.None;
 	static TheHitTags hitTag2 = TheHitTags.None;
 	
+	public static void SetOff(int num,string wall){
+		if(num==1&&hitTag1.ToString()==wall)hitTag1 = TheHitTags.None;
+		else if(num==2&&hitTag2.ToString()==wall)hitTag2 = TheHitTags.None;
+	}
+	
 	public static void CheckHitTag(string what){
 		if(what==hitTag1.ToString()||what==hitTag2.ToString ())
 			HitArrow ();

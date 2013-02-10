@@ -24,7 +24,7 @@ public class TheGenerator : MonoBehaviour {
 	}
 	
 	void GenArrowRand(){
-		GenArrow(Random.Range (-1,2),Random.Range (-1,2),Random.Range (-1,2));	
+		GenArrow(Random.Range (-1,2),Random.Range (-1,2),0);	
 	}
 	
 	private void GenArrow(int dirx,int diry,int dirz){
@@ -39,6 +39,7 @@ public class TheGenerator : MonoBehaviour {
 		GameObject g = Instantiate(goArrow,Vector3.zero,Quaternion.identity) as GameObject;
 		ArrowBrain ab = g.GetComponent<ArrowBrain>();
 		ab.SetVelocity(v);
+		g.name = "Arrow";
 	}
 	
 	void Update () {
