@@ -37,6 +37,7 @@ public class TheGenerator : MonoBehaviour {
 		Vector3 v = new Vector3(dirx,diry,dirz);
 		print (v);
 		GameObject g = Instantiate(goArrow,Vector3.zero,Quaternion.identity) as GameObject;
+		if(g==null)return;
 		ArrowBrain ab = g.GetComponent<ArrowBrain>();
 		ab.SetVelocity(v);
 		g.name = "Arrow";

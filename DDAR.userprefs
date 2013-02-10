@@ -1,23 +1,22 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../SnowGlobe/Assets/Plugins/Android/GyroDroid/SensorHelper.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Core/ArrowBrain.cs">
     <Files>
-      <File FileName="../AEntomology-old/Assets/SampleScripts/MinimalSensorCamera.cs" Line="21" Column="3" />
+      <File FileName="../AEntomology-old/Assets/SampleScripts/MinimalSensorCamera.cs" Line="19" Column="21" />
       <File FileName="../AEntomology-old/Assets/SampleScripts/TurntableSensorCamera.cs" Line="1" Column="1" />
       <File FileName="../SnowGlobe/Assets/Plugins/Android/GyroDroid/SampleScripts/TurntableSensorCamera.cs" Line="48" Column="3" />
       <File FileName="../SnowGlobe/Assets/Plugins/Android/GyroDroid/SensorHelper.cs" Line="139" Column="9" />
+      <File FileName="Assets/Plugins/BitGym/BitGymMotion/Feedback/VideoTexture.shader" Line="7" Column="32" />
+      <File FileName="Assets/Plugins/BitGym/BitGymMotion/Feedback/BGBodyFeedbackVideoPlane.cs" Line="62" Column="5" />
+      <File FileName="Assets/Core/WallControls.cs" Line="1" Column="1" />
+      <File FileName="Assets/Core/TheGenerator.cs" Line="1" Column="1" />
+      <File FileName="Assets/Core/ScoreKeeper.cs" Line="1" Column="1" />
+      <File FileName="Assets/Core/BodyBlurb.cs" Line="1" Column="1" />
+      <File FileName="Assets/Core/ArrowBrain.cs" Line="29" Column="60" />
     </Files>
-    <Pads>
-      <Pad Id="ClassPad">
-        <State expanded="True" selected="True" />
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/yosun_mbpr15/DDAR/Assets/Core/ArrowBrain.cs" line="34" />
-      <Breakpoint file="/Users/yosun_mbpr15/DDAR/Assets/Core/ArrowBrain.cs" line="58" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

@@ -10,10 +10,14 @@ public class ArrowBrain : MonoBehaviour {
 	int whichHitTag=-1; 
 	string hitWall="None";
 	
-	WallControls wallcontrols;
+	//WallControls wallcontrols;
 	
 	void Start(){
-		wallcontrols = GameObject.Find ("Generator").GetComponent<WallControls>();
+		Init ();	
+	}
+	
+	public void Init(){
+		//this.wallcontrols = GameObject.Find ("Generator").GetComponent<WallControls>();
 	}
 	
 	public void SetVelocity(Vector3 v){
@@ -26,7 +30,7 @@ public class ArrowBrain : MonoBehaviour {
 		else 
 			MoveThere(myVelocity);
 		timeElapsedAfterCollide+=Time.deltaTime;
-		if(timeElapsedAfterCollide<9&&timeElapsedAfterCollide>0.5f)
+		if(timeElapsedAfterCollide<9&&timeElapsedAfterCollide>0.75f)
 			DeactivateSelf();
 	}
 	
@@ -47,8 +51,8 @@ public class ArrowBrain : MonoBehaviour {
 		if(col.name!="Destroyer"){
 			if(col.name!="Arrow"&&col.name!="BodyBouncer"){
 				
-				InputTimer(col.name);
-				wallcontrols.GlowWall(col.gameObject);
+				InputTimer(col.name);print (col.name+" entered");
+				WallControls.GlowWall(col.gameObject);
 				
 			}
 		}
