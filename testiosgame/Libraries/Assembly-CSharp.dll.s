@@ -1033,11 +1033,11 @@ Lme_28:
 Lm_29:
 TheCharacterSelector_GoNext:
 
-	.byte 13,192,160,225,128,64,45,233,13,112,160,225,0,93,45,233,4,208,77,226,13,176,160,225,0,160,160,225,32,16,154,229
-	.byte 10,0,160,225
+	.byte 13,192,160,225,128,64,45,233,13,112,160,225,0,93,45,233,4,208,77,226,13,176,160,225,0,160,160,225,32,0,154,229
+	.byte 0,16,224,227,1,0,80,225,7,0,0,10,32,16,154,229,10,0,160,225
 bl p_62
 
-	.byte 32,0,154,229,0,16,224,227,1,0,80,225,4,0,0,10,0,0,159,229,0,0,0,234
+	.byte 0,0,159,229,0,0,0,234
 	.long mono_aot_Assembly_CSharp_got - . + 156
 	.byte 0,0,159,231
 bl p_63
@@ -26428,7 +26428,7 @@ mono_image_table:
 
 	.long 4
 	.asciz "Assembly-CSharp"
-	.asciz "2FBB195E-2B6C-4867-B6FD-51EE0516F9EC"
+	.asciz "F8E89049-F18E-4B6B-A3C3-D5496A920655"
 	.asciz ""
 	.asciz ""
 	.align 3
@@ -26449,7 +26449,7 @@ mono_image_table:
 
 	.long 0,0,0,0,0
 	.asciz "Assembly-CSharp-firstpass"
-	.asciz "EB13D61D-FFCD-427D-9AD8-6EDF0B6FF0A2"
+	.asciz "87E5D074-C2E6-4F07-AA92-956AE3B1F544"
 	.asciz ""
 	.asciz ""
 	.align 3
@@ -26474,7 +26474,7 @@ mono_aot_file_info:
 .text
 	.align 2
 mono_assembly_guid:
-	.asciz "2FBB195E-2B6C-4867-B6FD-51EE0516F9EC"
+	.asciz "F8E89049-F18E-4B6B-A3C3-D5496A920655"
 .text
 	.align 2
 mono_aot_version:
