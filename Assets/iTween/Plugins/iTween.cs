@@ -700,7 +700,7 @@ public class iTween : MonoBehaviour{
 		}else if(target.GetComponent(typeof(GUIText))){
 			tempColor=fromColor=target.guiText.material.color;
 		}else if(target.renderer){
-			tempColor=fromColor=target.renderer.material.color;
+			//tempColor=fromColor=target.renderer.material.color;
 		}else if(target.light){
 			tempColor=fromColor=target.light.color;
 		}

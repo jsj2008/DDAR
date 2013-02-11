@@ -5,9 +5,11 @@ public class ScoreKeeper : MonoBehaviour {
 	
 	static int arrows=0;
 	static int arrowsHit=0;
+	static int arrowsFail=0;
 	
  	static GUIText guiArrows;
 	static GUIText guiArrowsHit;
+	static GUIText guiArrowsFail;
 	
 	public enum TheHitTags{
 		None,
@@ -51,15 +53,29 @@ public class ScoreKeeper : MonoBehaviour {
 	void Start(){
 		guiArrows = GameObject.Find ("guiArrows").guiText;
 		guiArrowsHit = GameObject.Find ("guiArrowsHit").guiText;
+		guiArrowsFail = GameObject.Find ("guiArrowsFail").guiText;
 	}
 	
 	public static void IncArrow(){
 		arrows++;
-		guiArrows.text = arrows.ToString();
+		guiArrows.text = "Enemies: "+arrows.ToString();
 	}
 	
 	public static void HitArrow(){
 		arrowsHit++;
-		guiArrowsHit.text = arrowsHit.ToString();
+		guiArrowsHit.text = "Score: "+arrowsHit.ToString();
 	}
+	
+	public static void IncFail(){
+		arrowsFail++;	
+		guiArrowsFail.text = "Missed: "+arrowsFail.ToString();
+	}
+	
+	public static int GetFails(){
+		return arrowsFail;	
+	}
+	
+	public static int GetHits(){
+		return arrowsHit;	
+	}	
 }

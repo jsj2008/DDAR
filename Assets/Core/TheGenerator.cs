@@ -35,7 +35,7 @@ public class TheGenerator : MonoBehaviour {
 		else {dirx=0;diry=0;}
 		// generate arrow and assign dir (velocity)
 		Vector3 v = new Vector3(dirx,diry,dirz);
-		print (v);
+		//print (v);
 		GameObject g = Instantiate(goArrow,Vector3.zero,Quaternion.identity) as GameObject;
 		if(g==null)return;
 		ArrowBrain ab = g.GetComponent<ArrowBrain>();
